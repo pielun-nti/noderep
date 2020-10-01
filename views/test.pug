@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  each row in result
+    .card
+    .card-body
+      p.card-text= row.body
+    .card-footer.d-flex
+      p.small Posted by 
+        a(href="#")= row.name
+        |  on 
+        time(date="#{updated}")= row.updated_at
