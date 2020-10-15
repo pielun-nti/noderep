@@ -9,7 +9,7 @@ dotenv.config({path: './config/config.env'})
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var testRouter = require('./routes/test')
+var storyRouter = require('./routes/story')
 
 var app = express();
 
@@ -30,7 +30,7 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/test', testRouter)
+app.use('/story', storyRouter)
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

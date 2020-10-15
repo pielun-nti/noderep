@@ -1,0 +1,29 @@
+extends layout
+
+
+
+block content
+  main
+    .container
+      h1= title
+      if stories
+        p.lead Stories
+        ul.list
+          each story in stories
+            li= story
+
+      if story[0]
+        .card
+        .card-body
+        p.card-text= story[0].body
+        h3 Välj ett alternativ´
+        if story[0].alt1
+          a(href="/story/" + story[0].alt1id)=story[0].alt1
+          br
+        if story[0].alt2
+        a(href="/story/" + story[0].alt2id)=story[0].alt2
+
+        if meeps
+          ul.list
+            each meep in meeps
+              li= meep.body
